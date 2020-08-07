@@ -1,0 +1,19 @@
+<html>
+<body bgcolor="#9370db">
+    <table align="center" border="2">
+        <tr><th colspan="2" class="v4"><a href="{% url 'Add_new_class' %}"><h1>Schedule New Class</h1></a> </th><th colspan="2" class="v4"><a href="{% url 'View_all_scheduled_classes'%}"><h1>View all scheduled Class</h1></a></th></tr>
+       <tr><th colspan="4"><h1>Registered Students Details</h1></th></tr>
+        <tr><th> IDNO</th>
+       <th>Name</th>
+        <th>Email-Id</th>
+        <th>Password</th></tr>
+        {% for x in data %}
+            <tr><th>{{ x.sno }}</th>
+            <th>{{ x.sname }}</th>
+            <th>{{ x.email }}</th>
+            <th>{{ x.password }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

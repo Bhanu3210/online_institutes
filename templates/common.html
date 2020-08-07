@@ -1,0 +1,47 @@
+<html>
+<header>
+    <style>
+        .m1{
+            font-size: 25px;
+            font-family: "Arial Black";
+            background-color: aqua;
+            color: black;
+            padding: 20px;
+            padding-right: 20px;
+            font-style: oblique;
+            text-align: center;
+        }
+        .m2{
+            font-size: 50px;
+            font-family: "Times New Roman";
+            background-color: black;
+            color: aqua;
+            text-blink: 5px;
+        }
+
+    </style>
+</header>
+
+
+<body bgcolor="blue">
+   <table align="center" border="0">
+       {% load static %}
+       <tr><th colspan="2"><img src="{% static 'images/pro1.jpg' %}" width="250" height="250"></th><th class="m2" colspan="2"><h1>Learning is Everything </h1></th></tr>
+
+
+               <tr><th class="m1" > <a href="{% url 'Stu_registration' %}">Registration</a></th>
+                   <th class="m1" ><a href="{% url 'stu_Login' %}">Login</a></th>
+                   <th class="m1" ><a href="#"> Search</a></th>
+                   <th class="m1" ><a href="#">Contact us</a></th>
+               </tr>
+               <tr>
+                   <th colspan="4">
+                       {% block  bhanu %}
+                       {% endblock %}
+                   </th>
+               </tr>
+
+       </th></tr>
+   </table>
+</body>
+</html>

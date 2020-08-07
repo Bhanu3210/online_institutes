@@ -1,0 +1,68 @@
+<html>
+
+<header>
+    <style>
+        .v1{
+            font-style: normal;
+            font-size: 30px;
+
+            background-color: #4cfbf8;
+            color: bisque;
+
+        }
+         .v2{
+            font-style: normal;
+            font-size: 30px;
+            font-family: "Arial Black";
+            background-color: #251cfe;
+            color: white;
+         }
+        .v3 {
+            font-style: normal;
+            font-size: 20px;
+            font-family: "Arial Black";
+            background-color: black;
+            color: bisque;
+            padding: 5px;
+        }
+        .v4 {
+            font-style: normal;
+            font-size: 15px;
+            font-family: "Arial Black";
+            background-color: darkslategrey;
+            color: bisque;
+            padding: 5px;
+        }
+        .v5 {
+            font-style: normal;
+            font-size: 15px;
+            font-family: "Arial Black";
+            background-color: red;
+            color: bisque;
+            padding: 5px;
+        }
+        .v6 {
+            font-style: normal;
+            font-size: 15px;
+            font-family: "Arial Black";
+            background-color: white;
+            color: bisque;
+            padding: 5px;
+        }
+    </style>
+</header>
+ <body bgcolor="black">
+
+ <table align="center" border="0">
+     <tr><th colspan="4" class="v1"><a href="{% url 'Add_new_class' %}"><h1>Schedule New Class</h1></a> </th><th colspan="5" class="v1"><a href="{% url 'View_all_scheduled_classes'%}"><h1>View all scheduled Class</h1></a></th></tr>
+
+   <tr><th colspan="9" class="v2"><h1>All scheduled classes</h1></th></tr>
+      <tr><th class="v3">IDNO</th><th class="v3">Faculty</th><th class="v3">Course</th><th class="v3">Date</th><th class="v3">Time</th><th class="v3">Fee</th><th class="v3">Duration</th><th class="v3">Update</th><th class="v3">Delete</th>
+      </tr>
+       {% for y in schedule %}
+           <tr><th class="v4">{{ y.fno }}</th><th class="v4">{{ y.fname }}</th><th class="v4">{{ y.course }}</th><th class="v4">{{ y.date }}</th><th class="v4">{{ y.time }}</th><th class="v4">{{ y.fee }}</th><th class="v4">{{ y.duration }}</th>
+               <th  class="v6"><a href="/edit/{{ y.fno }}">Edit</a></th><th class="v5"> <a href="/delete_class/{{ y.fno }}">Delete</a></th></tr>
+      {% endfor %}
+     </table>
+ </body>
+</html>

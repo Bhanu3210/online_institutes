@@ -1,0 +1,15 @@
+<html>
+<body>
+   <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       <table align="center" border="2">
+           <tr><th colspan="2"><h1>Student Registartion</h1></th></tr>
+                 {{ form }}
+           <tr><th colspan="2">
+               <button type="submit">Submit</button>
+           </th></tr>
+
+       </table>
+   </form>
+</body>
+</html>

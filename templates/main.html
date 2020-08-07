@@ -1,0 +1,45 @@
+
+{% extends 'common.html' %}
+
+{% block bhanu %}
+    <style>
+    .a2{
+        font-size: 15px;
+
+        font-family: "cursive";
+        background: black;
+        color: deepskyblue;
+        padding: 10px;
+    }
+    .a1 {
+        background-color: blue;
+        color: yellow;
+        padding: 10px;
+    }
+        #a3{
+            background-color: lawngreen;
+        }
+    .a4 {
+        font-size: 15px;
+
+        font-family: "cursive";
+        background: white;
+        color: darkmagenta;
+        padding: 10px;
+    }
+    </style>
+
+
+
+   <tr><th colspan="8" class="a1"><h1>All scheduled classes</h1></th></tr>
+      <tr><th class="a4" colspan="0.5">IDNO</th><th class="a4">Faculty</th><th class="a4">Course</th><th class="a4">Date</th><th class="a4">Time</th><th class="a4">Fee</th><th class="a4">Duration</th><th class="a4">Enroll</th>
+      </tr>
+
+       {% for y in schedule %}
+           <tr><th class="a2">{{ y.fno }}</th><th class="a2">{{ y.fname }}</th><th class="a2">{{ y.course }}</th><th class="a2">{{ y.date }}</th><th class="a2">{{ y.time }}</th><th class="a2">{{ y.fee }}</th><th class="a2">{{ y.duration }}</th>
+           <th id = "a3"><a href="#">Enroll</a> </th>
+           </tr>
+       {% endfor %}
+
+
+{% endblock %}

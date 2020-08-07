@@ -1,0 +1,12 @@
+<html>
+<body>
+<form method="post" enctype="multipart/form-data">
+  <table align="center" border="2">
+      {% csrf_token %}
+      <tr><th colspan="2"><h1>Scheduleing New class</h1></th></tr>
+           <tr><th>{{ form.as_p }}</th></tr>
+      <tr><th colspan="2"><button type="submit">Save</button> </th></tr>
+  </table>
+</form>
+</body>
+</html>
